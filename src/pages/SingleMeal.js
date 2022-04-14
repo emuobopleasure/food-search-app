@@ -55,7 +55,7 @@ const SingleMeal = () => {
     useEffect(()=> {
         setLoading(true)
         mealDetails()
-    }, [id])
+    }, [id, mealDetails])
     
     if (loading) {
        return <Loading/>
@@ -76,7 +76,7 @@ const SingleMeal = () => {
   return (
     <section className='singlemeal-section mb-4 flex flex-col max-w-[30rem]'>
         <div className='image-container'>
-            <img src={image} className='rounded-b-xl w-full h-[20rem] object-cover' />
+            <img src={image} alt='singlemeal' className='rounded-b-xl w-full h-[20rem] object-cover' />
         </div>
         <div className='meal-details-container px-4 flex flex-col gap-3'>
             <div className='row1 flex items-center justify-between'>

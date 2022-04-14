@@ -39,7 +39,7 @@ const AppProvider = ({children}) => {
 
     useEffect(() => {
         fetchFoods()
-    }, [searchData])
+    }, [searchData, fetchFoods])
     return (
         <AppContext.Provider value={{
             loading, 

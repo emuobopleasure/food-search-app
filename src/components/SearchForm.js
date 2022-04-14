@@ -1,5 +1,5 @@
-import React, { Children, useRef } from 'react'
-import { AppContext, useGlobalContext } from '../context'
+import React, { useRef } from 'react'
+import { useGlobalContext } from '../context'
 import { FiSearch } from 'react-icons/fi';
 import Button from './Button';
 
