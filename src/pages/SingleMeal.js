@@ -56,7 +56,7 @@ const SingleMeal = () => {
             }
         }
         mealDetails()
-    }, [id,])
+    }, [id])
     
     if (loading) {
        return <Loading/>
