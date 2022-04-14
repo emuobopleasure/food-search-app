@@ -9,35 +9,36 @@ const AppProvider = ({children}) => {
     
     const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
 
-    const fetchFoods = async () => {
-        setLoading(true)
-        try {
-            const res = await fetch(`${url}${searchData}`)
-            const foodData = await res.json()
-            // console.log(foodData)
-            const { meals } = foodData
-            if (meals) {
-                const newMeals = meals.map((item) => {
-                    const { idMeal, strMealThumb, strMeal, strCategory } = item
-                  return  {
-                            id:idMeal, 
-                            image:strMealThumb, 
-                            name:strMeal, 
-                            category:strCategory
-                        }
-                })
-                setFoods(newMeals)
-            }else {
-                setFoods([])
-            }
-            setLoading(false)
-
-        }catch (error) {
-            console.log(error)
-        }
-    }
+    
 
     useEffect(() => {
+        const fetchFoods = async () => {
+            setLoading(true)
+            try {
+                const res = await fetch(`${url}${searchData}`)
+                const foodData = await res.json()
+                // console.log(foodData)
+                const { meals } = foodData
+                if (meals) {
+                    const newMeals = meals.map((item) => {
+                        const { idMeal, strMealThumb, strMeal, strCategory } = item
+                      return  {
+                                id:idMeal, 
+                                image:strMealThumb, 
+                                name:strMeal, 
+                                category:strCategory
+                            }
+                    })
+                    setFoods(newMeals)
+                }else {
+                    setFoods([])
+                }
+                setLoading(false)
+    
+            }catch (error) {
+                console.log(error)
+            }
+        }
         fetchFoods()
     }, [searchData])
     return (
