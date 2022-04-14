@@ -21,41 +21,13 @@ const SingleMeal = () => {
         setWish((prevWish) => !prevWish)
     }
 
-    const mealDetails = async () => {
-        try {
-            const res = await fetch(`${url}${id}`)
-            const foodDetails = await res.json()
-            console.log("rrr",foodDetails)
-            if (foodDetails.meals) {
-                setFoods({
-                    ...foods, 
-                    name: foodDetails.meals[0].strMeal,
-                    image: foodDetails.meals[0].strMealThumb,
-                    country: foodDetails.meals[0].strArea,
-                    category: foodDetails.meals[0].strCategory, 
-                    ingredient1: foodDetails.meals[0].strIngredient1, 
-                    ingredient2: foodDetails.meals[0].strIngredient2,
-                    ingredient3: foodDetails.meals[0].strIngredient3,
-                    ingredient4: foodDetails.meals[0].strIngredient4,
-                    ingredient5: foodDetails.meals[0].strIngredient5
-
-                })
-            }else {
-                setFoods(null)
-                // console.log('null')
-            }
-            setLoading(false)
-        }catch (error) {
-            console.log(error)
-            setLoading(false)
-        }
-    }
+    
     // console.log(foods.country)
     
     useEffect(()=> {
         setLoading(true)
         mealDetails()
-    }, [id, mealDetails()])
+    }, [id])
     
     if (loading) {
        return <Loading/>
@@ -90,7 +62,7 @@ const SingleMeal = () => {
             <div className='row2'>
                 <p className='meal-desc text-base text-gray-300 flex items-center'>
                 The Food Science Text Series provides facul with the leading teaching tool The Editorial Board hos outlined.
-                <span onClick={handleWish}>
+                <span onClick={handleWish} className='wish-icons cursor-pointer'>
                    {wish ? <BsHeartFill className='wish-icon text-xl text-[#ff6801]'/>
                     :
                     <BsHeart className='wish-icon text-xl text-[#ff6801]'/>
