@@ -21,7 +21,35 @@ const SingleMeal = () => {
         setWish((prevWish) => !prevWish)
     }
 
-    
+    const mealDetails = async () => {
+        try {
+            const res = await fetch(`${url}${id}`)
+            const foodDetails = await res.json()
+            console.log("rrr",foodDetails)
+            if (foodDetails.meals) {
+                setFoods({
+                    ...foods, 
+                    name: foodDetails.meals[0].strMeal,
+                    image: foodDetails.meals[0].strMealThumb,
+                    country: foodDetails.meals[0].strArea,
+                    category: foodDetails.meals[0].strCategory, 
+                    ingredient1: foodDetails.meals[0].strIngredient1, 
+                    ingredient2: foodDetails.meals[0].strIngredient2,
+                    ingredient3: foodDetails.meals[0].strIngredient3,
+                    ingredient4: foodDetails.meals[0].strIngredient4,
+                    ingredient5: foodDetails.meals[0].strIngredient5
+
+                })
+            }else {
+                setFoods(null)
+                // console.log('null')
+            }
+            setLoading(false)
+        }catch (error) {
+            console.log(error)
+            setLoading(false)
+        }
+    }
     // console.log(foods.country)
     
     useEffect(()=> {
