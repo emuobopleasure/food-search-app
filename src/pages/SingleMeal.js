@@ -54,8 +54,8 @@ const SingleMeal = () => {
     
     useEffect(()=> {
         setLoading(true)
-       const mealVar = mealDetails()
-    }, [id, mealVar])
+       mealDetails()
+    }, [id])
     
     if (loading) {
        return <Loading/>
