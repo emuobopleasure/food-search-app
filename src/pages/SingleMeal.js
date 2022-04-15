@@ -74,12 +74,12 @@ const SingleMeal = () => {
     
     console.log('foods',foods)
   return (
-    <section className='singlemeal-section mb-4 flex flex-col max-w-[30rem]'>
+    <section className='singlemeal-section mb-4 flex flex-col md:flex-row justify-center md:my-[5rem] 2xl:gap-[5rem]md:px-12'>
         <div className='image-container'>
-            <img src={image} alt='singlemeal' className='rounded-b-xl w-full h-[20rem] object-cover' />
+            <img src={image} alt={name} className='rounded-b-xl w-full h-[20rem] object-cover md:rounded-lg' />
         </div>
         <div className='meal-details-container px-4 flex flex-col gap-3'>
-            <div className='row1 flex items-center justify-between'>
+            <div className='row1 flex items-center justify-between md:flex-col md:items-start'>
                 <h1 className='meal-title text-[2.5rem] font-semibold'>
                     {name}
                 </h1>
@@ -118,7 +118,7 @@ const SingleMeal = () => {
                     <li>{ingredient5}</li>
                 </ul>
             </div>
-            <div className='cart-row flex justify-between'>
+            <div className='cart-row flex justify-between md:justify-start md:gap-6'>
                 <div className='cart-number-box bg-[#1c2431] px-4 py-2 rounded-lg'>
                     hhh
                 </div>
