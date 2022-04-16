@@ -76,7 +76,7 @@ const SingleMeal = () => {
   return (
     <section className='singlemeal-section mb-4 flex flex-col md:flex-row justify-center md:my-[5rem] 2xl:gap-[5rem]md:px-12'>
         <div className='image-container'>
-            <img src={image} alt={name} className='rounded-b-xl w-full h-[20rem] object-cover md:rounded-lg' />
+            <img src={image} alt={name} className='meal-image rounded-xl w-full h-[20rem] object-cover md:rounded-lg' />
         </div>
         <div className='meal-details-container px-4 flex flex-col gap-3'>
             <div className='row1 flex items-center justify-between md:flex-col md:items-start'>

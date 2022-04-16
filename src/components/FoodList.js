@@ -20,11 +20,11 @@ const FoodList = () => {
 
 
   return (
-    <section className='foodlist-section my-[1rem]'>
+    <section className='foodlist-section my-[1rem] md:px-12'>
         <h2 className='foods-menu-title text-center'>
             ITADAKIMASU😋
         </h2>
-        <div className='food-list grid grid-cols-2'>
+        <div className='food-list grid grid-cols-2 md:flex flex-wrap justify-between'>
             {
                 foods.map((meal) => {
                     return <Food key={meal.id} meal={meal} />
