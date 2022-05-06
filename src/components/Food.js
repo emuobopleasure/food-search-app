@@ -4,9 +4,10 @@ import Button from './Button'
 
 const Food = ({meal}) => {
     // console.log('meal', meal)
+    
   return (
     <article className='food-dish'>
-        <div className='food-container bg-[#1c2431] flex flex-col mx-auto max-w-[10rem] items-center justify-center my-4 md:py-0 md:px-0 rounded-t-3xl rounded-bl-3xl py-4 px-2 overflow-hidden md:max-w-[24rem] md:h-[22rem] md:rounded-2xl'>
+        <div className='food-container bg-[#1c2431] flex flex-col mx-auto max-w-[9rem] sm:max-w-[9rem] items-center justify-center my-4 md:py-0 md:px-0 rounded-t-3xl rounded-bl-3xl py-4 px-2 overflow-hidden md:max-w-[20rem] lg:max-w-[24rem] md:h-[22rem] md:rounded-2xl'>
             <div className='image-div mb-2 overflow-hidden md:w-[24rem] md:h-auto'>
                 <img src={meal.image} alt={meal.name} className='meal-image w-[8rem] rounded-[30%] md:w-full md:h-full md:rounded-none md:object-cover md:transform transition duration-300 hover:scale-110'/>
             </div>
