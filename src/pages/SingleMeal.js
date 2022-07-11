@@ -120,7 +120,7 @@ const SingleMeal = () => {
             </div>
             <div className='cart-row flex justify-between md:justify-start md:gap-6'>
                 <div className='cart-number-box bg-[#1c2431] px-4 py-2 rounded-lg'>
-                    hhh
+                    In Progress
                 </div>
                 <div className='add-to-cart-button'>
                     <Button custom='bg-[#ff6801]' content='ADD TO CART'/>

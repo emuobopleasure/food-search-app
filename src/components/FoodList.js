@@ -24,7 +24,7 @@ const FoodList = () => {
         <h2 className='foods-menu-title text-center'>
             ITADAKIMASU😋
         </h2>
-        <div className='food-list grid grid-cols-2 md:flex flex-wrap justify-between'>
+        <div className='food-list grid grid-cols-2 md:flex flex-wrap justify-between xl:gap-[1rem]'>
             {
                 foods.map((meal) => {
                     return <Food key={meal.id} meal={meal} />
